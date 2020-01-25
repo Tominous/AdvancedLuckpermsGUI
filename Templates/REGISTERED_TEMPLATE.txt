@@ -1,0 +1,2 @@
+# Registered custom template.
+DrOreo002|1.0|MaterialFix|1.15
