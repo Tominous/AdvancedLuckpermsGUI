@@ -1,4 +1,8 @@
-ConfigVersion: CUSTOM_SETTING # Do not change!
+CustomTemplateData:
+  Author: 'DrOreo002'
+  Version: 1.0
+  Name: 'MaterialFix'
+  McVersion: 1.15
 
 # Main inventory
 Main:
