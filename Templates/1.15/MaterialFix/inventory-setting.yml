@@ -1,0 +1,1143 @@
+ConfigVersion: CUSTOM_SETTING # Do not change!
+
+# Main inventory
+Main:
+  MainMenu:
+    title: 'LuckPermsGUI'
+    size: 45
+    openAnimation: 'ITEM_WAVE_ANIMATION' # Case sensitive
+    # This is the inventory layout
+    # Every line must have 9 characters
+    # The replacement of the character can be found at the layout-item key
+    layout:
+      - '111111111'
+      - 'XAXXBXXCX'
+      - 'XXXXXXXXX'
+      - 'XXXXDXXXX'
+      - '111111111'
+    # The replacements, it is case sensitive
+    # so be careful when editing it!
+    # for the button animation you can use 'fill_animation' or 'wave_animation'
+    layout-item:
+      1:
+        name: ' '
+        material: IRON_BARS
+      X:
+        name: ' '
+        material: GRAY_STAINED_GLASS_PANE
+      A:
+        name: 'Manage Player'
+        material: PLAYER_HEAD
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRjMWVlYmQwMmU5MmM1NmU0OTA3YjM1MmNhNjUxYTU1MTljZWNkZTJkOGZjMGZlYzkzNGIzODZhMWQ2NjEyMyJ9fX0='
+        animated: true
+        animationData:
+          animationName: 'FILL_ANIMATION'
+        lore:
+          - '&7Player management GUI. Before opening'
+          - '&7you have to select a player first'
+          - '&r'
+          - '&aLeft Click &7to select player by GUI'
+          - '&aRight Click &7to select player by Typing'
+      B:
+        name: 'Manage Database'
+        material: PAPER
+        animated: true
+        animationData:
+          animationName: 'FILL_ANIMATION'
+        lore:
+          - '&aEdit&7, &aRemove&7, &aAdd&7 permissions from database'
+      C:
+        name: 'Manage Groups'
+        material: CHEST
+        animated: true
+        animationData:
+          animationName: 'FILL_ANIMATION'
+        lore:
+          - '&aEdit&7, &aRemove&7, &aAdd&7 LuckPerms group'
+      D:
+        name: 'Information'
+        material: OAK_SIGN
+        animated: true
+        animationData:
+          animationName: 'FILL_ANIMATION'
+        lore:
+          - '&7See information about &aGroups, User, etc&7 here'
+  ManagePlayerMenu:
+    title: 'Manage Player'
+    layout:
+      - 'PXABCDUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd Group'
+        lore:
+          - '&7Click to add group to user'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd Permission'
+        lore:
+          - '&7Add permission to user'
+          - '&r'
+          - '&aRight-Click &7add via typing'
+          - '&aLeft-Click &7add via gui'
+      C:
+        material: FLINT_AND_STEEL
+        name: '&aRemove Group'
+        lore:
+          - '&7Click to remove group from user'
+      D:
+        material: BOOK_AND_QUILL
+        name: '&aRemove Permission'
+        lore:
+          - '&7Click to remove permission from user'
+      # This is the player information
+      # there're no extra placeholder. So there's just that. Nothing more
+      # also the placeholder will only works in Lores.
+      P:
+        material: PLAYER_HEAD
+        name: '&a%player%'
+        lore:
+          - '&r'
+          - '&bUser Info'
+          - '&7- &3UUID: &f%user_uuid%'
+          - '&7- &3Status: %user_status%'
+          - '&7- &3Primary Group: &f%user_primary_group%'
+          - '&bParent Groups:'
+          - '&f%user_parent_groups%'
+          - '&bContextual Data:'
+          - '&7- &3Has contextual data: &a%has_contextual_data%'
+          - '&7- &3Applicable context: &r%user_contexts%'
+          - '&7- &3Prefix: &r"%user_prefix%&f"'
+          - '&7- &3Suffix: &r"%user_suffix%&f"'
+  ManageGroupMenu:
+    title: 'Manage Group'
+    layout:
+      - 'EXABCUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      E:
+        material: OAK_DOOR
+        name: '&cExit'
+        lore:
+          - '&7Click to close this inventory!'
+      A:
+        material: FEATHER
+        name: '&aEdit Group'
+        lore:
+          - '&7Click to edit a group'
+      B:
+        material: BOOK
+        name: '&aCreate Group'
+        lore:
+          - '&7Click to create a group'
+      C:
+        material: FLINT_AND_STEEL
+        name: '&cDelete Group'
+        lore:
+          - '&7Click to delete a group'
+  ManageDatabaseMenu:
+    title: 'Manage Database'
+    layout:
+      - 'EXABCUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      E:
+        material: OAK_DOOR
+        name: '&cExit'
+        lore:
+          - '&7Click to close this inventory!'
+      A:
+        material: FEATHER
+        name: '&aEdit Permission Provider'
+        lore:
+          - '&7You can edit loaded permission'
+          - '&7provider here. Also keep in mind that'
+          - '&7you cannot add / remove permission provider!'
+          - '&r'
+          - '&aLeft Click &7to select a permission provider'
+          - '&aRight Click &7to type a permission provider'
+      B:
+        material: BOOK
+        name: '&aSave to Website'
+        lore:
+          - '&7Click to save database to web server!'
+          - '&7[Coming Soon]'
+      C:
+        material: FURNACE
+        name: '&aSave to Local'
+        lore:
+          - '&7Click here to save edited data'
+          - '&7to local file. Be aware that this'
+          - '&7will take sometimes!. Also local save'
+          - '&7will always get executed when server &cShutting Down'
+          - '&r'
+          - '&eLeft Click &7to start the saving process'
+  InformationMenu:
+    title: 'Information'
+    layout:
+      - 'EXABCUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      E:
+        material: OAK_DOOR
+        name: '&cExit'
+        lore:
+          - '&7Click to close this inventory!'
+      A:
+        material: FEATHER
+        name: '&aUser Information'
+        lore:
+          - '&7Click to see user information'
+      B:
+        material: FLINT
+        name: '&aGroup Information'
+        lore:
+          - '&7Click to see group information'
+      C:
+        material: BOOK
+        name: '&aPermission Information'
+        lore:
+          - '&7Click to see permission information'
+ManagePlayer:
+  AddGroupMenu:
+    title: 'Add Group'
+    layout:
+      - 'IXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd as Permanent'
+        lore:
+          - '&7Click to add group as &apermanent&7 group'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd as Temporary'
+        lore:
+          - '&7Click to add group as &atemporary&7 group'
+      I:
+        material: PAPER
+        name: '&a%group%'
+        lore:
+          - '&7You''re currently selecting group: &a%group%'
+  AddPermissionMenu:
+    title: 'Add Permission'
+    layout:
+      - 'IXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd as Permanent'
+        lore:
+          - '&7Click to add permission as &apermanent&7 permission'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd as Temporary'
+        lore:
+          - '&7Click to add permission as &atemporary&7 permission'
+      I:
+        material: PAPER
+        name: '&aInformation'
+        lore:
+          - '&7You''re about to add these permission'
+          - '&7to player with the name of &a%player%'
+          - '&r'
+          - '&aPermissions'
+          - '%selectedPermissions%'
+ManageGroup:
+  EditGroupMenu:
+    title: 'Edit Group'
+    layout:
+      - 'GXABCDEUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: STICK
+        name: '&aEdit Permission'
+        lore:
+          - '&7Edit group''s default permission'
+          - '&r'
+          - '&aLeft-Click &7to add permission'
+          - '&aRight-Click &7to remove permission'
+      B:
+        material: NAME_TAG
+        name: '&aEdit Prefix'
+        lore:
+          - '&7Edit group''s prefix a.k.a'
+          - '&7display name'
+          - '&r'
+          - '&aLeft-Click &7to add prefix'
+          - '&aRight-Click &7to remove prefix'
+      C:
+        material: NAME_TAG
+        name: '&aEdit Suffix'
+        lore:
+          - '&7Edit group''s suffix'
+          - '&r'
+          - '&aLeft-Click &7to add suffix'
+          - '&aRight-Click &7to remove suffix'
+      D:
+        material: OAK_SAPLING
+        name: '&aEdit Parent'
+        lore:
+          - '&7Edit group''s parent'
+          - '&r'
+          - '&aLeft-Click &7to add parent'
+          - '&aRight-Click &7to remove parent'
+      E:
+        material: FEATHER
+        name: '&aEdit Icon'
+        lore:
+          - '&7Edit group''s display icon'
+          - '&r'
+          - '&aLeft-Click &7to start editing'
+      G:
+        material: PAPER
+        name: '&a%group%'
+        lore:
+          - '&7You''re currently selecting group: &a%group%'
+  AddPermissionMenu:
+    title: 'Add Permission'
+    layout:
+      - 'IXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd as Permanent'
+        lore:
+          - '&7Click to add permission as &apermanent&7 permission'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd as Temporary'
+        lore:
+          - '&7Click to add permission as &atemporary&7 permission'
+      I:
+        material: PAPER
+        name: '&aInformation'
+        lore:
+          - '&7You''re about to add these permission'
+          - '&7to group with the name of &a%group%'
+          - '&r'
+          - '&aPermissions'
+          - '%selectedPermissions%'
+  AddPrefixMenu:
+    title: 'Add Prefix'
+    layout:
+      - 'IXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd as Permanent'
+        lore:
+          - '&7Click to add prefix as &apermanent&7 prefix'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd as Temporary'
+        lore:
+          - '&7Click to add prefix as &atemporary&7 prefix'
+      I:
+        material: PAPER
+        name: '&aInformation'
+        lore:
+          - '&7You''re about to add these prefix'
+          - '&7to group &a%group%'
+          - '&r'
+          - '&aSelected:'
+          - '%selectedPrefix%'
+  AddSuffixMenu:
+    title: 'Add Suffix'
+    layout:
+      - 'IXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd as Permanent'
+        lore:
+          - '&7Click to add suffix as &apermanent&7 suffix'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd as Temporary'
+        lore:
+          - '&7Click to add suffix as &atemporary&7 suffix'
+      I:
+        material: PAPER
+        name: '&aInformation'
+        lore:
+          - '&7You''re about to add this suffix'
+          - '&7to group &a%group%'
+          - '&r'
+          - '&aSelected:'
+          - '%selectedSuffix%'
+  AddParentMenu:
+    title: 'Add Parent'
+    layout:
+      - 'IXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      A:
+        material: FLOWER_POT
+        name: '&aAdd as Permanent'
+        lore:
+          - '&7Click to add parent as &apermanent&7 parent'
+      B:
+        material: GRASS_BLOCK
+        name: '&aAdd as Temporary'
+        lore:
+          - '&7Click to add parent as &atemporary&7 parent'
+      I:
+        material: PAPER
+        name: '&aInformation'
+        lore:
+          - '&7You''re about to add this parent'
+          - '&7to group &a%group%'
+          - '&r'
+          - '&aSelected:'
+          - '%selected%'
+ManageDatabase:
+  EditProviderMenu:
+    title: 'Edit Permission Provider'
+    layout:
+      - 'GXABUUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      G:
+        material: PAPER
+        name: '&a%provider%'
+        lore:
+          - '&7You''re currently selecting provider: &a%provider%'
+      A:
+        material: STICK
+        name: '&aEdit Icon'
+        lore:
+          - '&7Provider''s icon are based on'
+          - '&aMinecraft Item &7or you can also'
+          - '&7user &aCustom Heads!'
+          - '&r'
+          - '&eLeft Click &7to set as &aMinecraft Item'
+          - '&eRight Click &7to set as &aCustom Head'
+      B:
+        material: FEATHER
+        name: '&aEdit Permission'
+        lore:
+          - '&7Provider contains permission'
+          - '&7that has some information inside'
+          - '&7by clicking this you can select a permission'
+          - '&7and edit their information'
+          - '&r'
+          - '&eLeft Click &7to select via &aGUI'
+          - '&eRight Click &7to select via &aTyping'
+  EditPermissionMenu:
+    title: 'Edit Permission'
+    layout:
+      - 'PXABCUUUX'
+      - '%navigator%'
+    layout-item:
+      X:
+        material: GRAY_STAINED_GLASS_PANE
+      U:
+        material: AIR
+      P:
+        material: PAPER
+        name: '&a%permission%'
+        lore:
+          - '&7You''re currently selecting permission: &a%permission%'
+      A:
+        material: BOOK
+        name: '&aEdit Description'
+        lore:
+          - '&7Every permission has its'
+          - '&7own description. You can use this'
+          - '&7to edit the description!'
+          - '&r'
+          - '&7Current:'
+          - '%current%'
+          - '&r'
+          - '&eLeft Click &7to edit description by typing'
+      B:
+        material: COMMAND_BLOCK
+        name: '&aEdit Commands'
+        lore:
+          - '&7Every permission has its'
+          - '&7own command. You can use this'
+          - '&7to edit the command!'
+          - '&r'
+          - '&7Current:'
+          - '%current%'
+          - '&r'
+          - '&eLeft Click &7to add commands by typing'
+          - '&eRight Click &7to clear and add commands by typing'
+      C:
+        material: GLASS_BOTTLE
+        name: '&eEdit Default Assignment'
+        lore:
+          - '&7Every permission has its'
+          - '&7own default assignment to specify'
+          - '&7whom gonna get the permission by default'
+          - '&r'
+          - '&7Current: &a%current%'
+          - '&r'
+          - '&eLeft Click &7to change the default assignment'
+Information:
+  User:
+    title: 'User Information'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    # This is the player information
+    # there're no extra placeholder. So there's just that. Nothing more
+    # also the placeholder will only works in Lores.
+    info-button:
+      material: PLAYER_HEAD
+      name: '&a%player%'
+      lore:
+        - '&r'
+        - '&bUser Info'
+        - '&7- &3UUID: &f%user_uuid%'
+        - '&7- &3Status: %user_status%'
+        - '&7- &3Primary Group: &f%user_primary_group%'
+        - '&bParent Groups:'
+        - '&f%user_parent_groups%'
+        - '&bContextual Data:'
+        - '&7- &3Has contextual data: &a%has_contextual_data%'
+        - '&7- &3Applicable context: &r%user_contexts%'
+        - '&7- &3Prefix: &r"%user_prefix%&f"'
+        - '&7- &3Suffix: &r"%user_suffix%&f"'
+  Group:
+    title: 'Group Information'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    # Group info button
+    # more information will be added in future update
+    info-button:
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&a%groupName%'
+      lore:
+        - '&7Group permission(s): &a%permissionSize%'
+        - '&7Group user(s): &a%groupUsers%'
+        - '&7Group Prefix(s):'
+        - '%prefix%'
+        - '&7Group Suffix(s):'
+        - '%suffix%'
+  Permission:
+    title: 'Permissions Information'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    # Permission info button
+    # more information will be added in future update
+    info-button:
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&a%permissionName%' # The permission provider or the plugin owner
+      lore:
+        - '&7Source: &a%source%'
+        - '&7Default assignment: &a%defaultAssignment%'
+        - '&r'
+        - '&aGranted commands:'
+        - '%commands%'
+        - '&aDescription:'
+        - '%description%'
+# Misc inventory
+Misc:
+  # Inventory to be opened when any 'list' or 'paginated' inventory
+  # is empty.
+  Empty:
+    title: 'Data is empty'
+    size: 27
+    layout:
+      - 'XXXXXXXXX'
+      - 'XXXXIXXXX'
+      - 'XXXXXXXXX'
+    layout-item:
+      X:
+        name: ' '
+        material: GRAY_STAINED_GLASS_PANE
+      I:
+        name: '&aSorry'
+        material: OAK_SIGN
+        lore:
+          - '%message%'
+  # Remove confirmation for all things.
+  RemoveConfirmationMenu:
+    title: 'Confirm Removal'
+    size: 27
+    layout:
+      - 'XXXXXXXXX'
+      - '_A_____B_'
+      - 'XXXXXXXXX'
+    layout-item:
+      X:
+        material: IRON_BARS
+      _:
+        material: AIR
+      A:
+        material: PLAYER_HEAD
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTMwZjQ1MzdkMjE0ZDM4NjY2ZTYzMDRlOWM4NTFjZDZmN2U0MWEwZWI3YzI1MDQ5YzlkMjJjOGM1ZjY1NDVkZiJ9fX0='
+        name: '&aAccept'
+        lore:
+          - '&7Click to remove'
+      B:
+        material: PLAYER_HEAD
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE2Nzg3YmEzMjU2NGU3YzJmM2EwY2U2NDQ5OGVjYmIyM2I4OTg0NWU1YTY2YjVjZWM3NzM2ZjcyOWVkMzcifX19'
+        name: '&cCancel'
+        lore:
+          - '&7Click to cancel'
+  # Navigator placeholder
+  # will replace %navigator% in any inventory layout
+  # it will replace it as the corresponding button specified here
+  # if you want to add the placeholder to inventory layout. Make sure size is correct
+  # for example: This placeholder will take 18 slot of inventory
+  # so your inventory size must be current_size + 18!
+  # if your size is 27 you can remove the section because default size is already 27!
+  #
+  # Navigator also have quick access. This for quickly accessing inventory
+  # button format can be found inside config.yml
+  Navigator-Placeholder:
+    placeholder: '%navigator%'
+    placeholder-layout:
+      - 'XXXXXXXXX'
+      - 'PXQQQQQQS'
+    placeholder-item:
+      Q:
+        material: BARRIER
+        name: '&aQuick access'
+        lore:
+          - '&7No inventory found for quick access..'
+      P:
+        name: '&aPrevious Inventory'
+        material: PLAYER_HEAD
+        texture-url: 'bd69e06e5dadfd84e5f3d1c21063f2553b2fa945ee1d4d7152fdc5425bc12a9'
+        lore:
+          - '&aClick &7to go to &e%prevInventory% &7inventory'
+      X:
+        material: IRON_BARS
+      S:
+        material: GRAY_STAINED_GLASS_PANE
+      _:
+        material: AIR
+  Navigator-Placeholder-Paginated:
+    placeholder: '%navigator-paginated%'
+    placeholder-layout:
+      - '_QQ_P_QQ_'
+    placeholder-item:
+      Q:
+        material: BARRIER
+        name: '&aQuick access'
+        lore:
+          - '&7No inventory found for quick access..'
+      P:
+        name: '&aPrevious Inventory'
+        material: PLAYER_HEAD
+        texture-url: 'bd69e06e5dadfd84e5f3d1c21063f2553b2fa945ee1d4d7152fdc5425bc12a9'
+        lore:
+          - '&aClick &7to go to &e%prevInventory% &7inventory'
+      _:
+        material: GRAY_STAINED_GLASS_PANE
+
+# This is a paginated inventory [For selection]
+# which means there's can be a lot of data inside
+# and can be viewed per pages
+# Paginated inventory must contain these values on layout
+# !-------! : As the item row
+# N : As the next button
+# P : As the previous button
+# I : As the information button
+Selector:
+  SelectPlayerMenu:
+    title: 'Select Player'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    selectable:
+      material: PLAYER_HEAD
+      name: '%player%'
+      animated: true
+      animationData:
+        animationName: 'FILL_ANIMATION'
+      lore:
+        - '&7Select this player'
+  SelectGroupMenu:
+    title: 'Select Group'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    selectable:
+      material: OAK_SIGN
+      name: '&a%groupName%'
+      lore:
+        - '&7Group permission(s): &a%permissionSize%'
+        - '&7Group user(s): &a%groupUsers%'
+        - '&7Group Prefix(s):'
+        - '%prefix%'
+        - '&7Group Suffix(s):'
+        - '%suffix%'
+        - '&r'
+        - '&7Click to select this group'
+  SelectPermissionMenu:
+    title: 'Select Permission'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+      _:
+        material: AIR
+    selectable:
+      material: GRAY_STAINED_GLASS_PANE
+      negatedColor: '&c' # Name color if the permission is negated
+      name: '&a%permissionName%' # The permission provider or the plugin owner
+      lore:
+        - '&7Source: &a%source%'
+        - '&7Default assignment: &a%defaultAssignment%'
+        - '&r'
+        - '&aGranted commands:'
+        - '%commands%'
+        - '&aDescription:'
+        - '%description%'
+        - '&r'
+        - '&eClick to select this permission'
+  SelectPermissionProviderMenu:
+    title: 'Select Permission Provider'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+      C:
+        name: '&aSwitch Provider Source'
+        material: OAK_SAPLING
+        lore:
+          - '&7Lost?, change provider source here!'
+          - '&7your current source is &a%currentSource%'
+          - '&r'
+          - '&aClick &7to switch provider source to &a%nextSource%'
+    selectable:
+      # Dirt is the default one, if there's a custom one specified
+      # then it will use the customized icon instead
+      material: DIRT
+      name: '&a%permissionProvider%' # The permission provider or the plugin owner
+      lore:
+        - '&7Permission amount: &a%permissionAmount%'
+        - '&7Source: &a%source%'
+        - '&r'
+        - '&7Click to open this permission provider'
+  # Multiple selection menu
+  SelectMultipleGroupMenu:
+    title: 'Select Group as Parent'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXVXIXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      V:
+        name: '&aAccept'
+        material: PLAYER_HEAD
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTMwZjQ1MzdkMjE0ZDM4NjY2ZTYzMDRlOWM4NTFjZDZmN2U0MWEwZWI3YzI1MDQ5YzlkMjJjOGM1ZjY1NDVkZiJ9fX0='
+        lore:
+          - '&7Click to accept your selection'
+          - '&r'
+          - '&aSelected groups: '
+          - '%selected%'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    selectable:
+      material: OAK_SIGN
+      name: '&a%groupName%'
+      lore:
+        - '&7Group permission(s): &a%permissionSize%'
+        - '&7Group user(s): &a%groupUsers%'
+        - '&7Group Prefix(s):'
+        - '%prefix%'
+        - '&7Group Suffix(s):'
+        - '%suffix%'
+        - '&r'
+        - '&7Click to select this group'
+  SelectMultiplePermissionMenu:
+    title: 'Select Permission'
+    size: 45
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXVXIXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      V:
+        name: '&aAccept'
+        material: PLAYER_HEAD
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTMwZjQ1MzdkMjE0ZDM4NjY2ZTYzMDRlOWM4NTFjZDZmN2U0MWEwZWI3YzI1MDQ5YzlkMjJjOGM1ZjY1NDVkZiJ9fX0='
+        lore:
+          - '&7Click to accept your selection'
+          - '&r'
+          - '&aSelected permissions: '
+          - '%selected%'
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    selectable:
+      material: GRAY_STAINED_GLASS_PANE
+      negatedColor: '&c' # Name color if the permission is negated
+      name: '&a%permissionName%' # The permission provider or the plugin owner
+      lore:
+        - '&7Source: &a%source%'
+        - '&7Default assignment: &a%defaultAssignment%'
+        - '&r'
+        - '&aGranted commands:'
+        - '%commands%'
+        - '&aDescription:'
+        - '%description%'
+        - '&r'
+        - '&eClick to select this permission'
+  SelectMultipleMetaMenu:
+    title: 'Select %selectType%'
+    size: 36
+    paginated: true
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - 'PXXVXIXXN'
+      - '%navigator-paginated%'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      V:
+        name: '&aAccept'
+        material: PLAYER_HEAD
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTMwZjQ1MzdkMjE0ZDM4NjY2ZTYzMDRlOWM4NTFjZDZmN2U0MWEwZWI3YzI1MDQ5YzlkMjJjOGM1ZjY1NDVkZiJ9fX0='
+        lore:
+          - '&7Click to accept your selection'
+          - '&r'
+          - '&aSelected %selectType%: '
+          - '%selected%'
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    selectable:
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&aSelect %selectType%'
+      lore:
+        - '&7%selectType%: &7"&r%value%&7"'
+        - '&7Weight: &c%weight%'
+        - '&7Contexts: &a%contexts%'
+# Set value inventory
+# This inventory must contain these values on layout
+# D : As Decrease value
+# I : As Increase value
+# A : As Accept value input
+# P : As the value preview
+SetValue:
+  SetExpiryMenu:
+    title: 'Set Expiry'
+    size: 45
+    layout:
+      - '_________'
+      - '__D_P_I__'
+      - '____C____'
+      - '_________'
+      - '____A____'
+    layout-item:
+      C:
+        name: '&aChange Increment'
+        lore:
+          - '&7Current increment &e%currentIncrement% &7next &e%nextIncrement%'
+          - '&r'
+          - '&7Click to modify'
+        material: STONE_BUTTON
+      _:
+        material: AIR
+      D:
+        name: '&aDecrease'
+        lore:
+          - '&7Decrease the time by 1 &e%currentIncrement%'
+        material: ARROW
+      P:
+        name: '&aWill expire in:'
+        lore:
+          - '&7%value%'
+        material: OAK_SIGN
+      I:
+        name: '&aIncrease'
+        lore:
+          - '&7Increase the time by 1 &e%currentIncrement%'
+        material: ARROW
+      A:
+        name: '&a&lACCEPT'
+        lore:
+          - '&7Click to save your changes!'
+        material: EMERALD_BLOCK
