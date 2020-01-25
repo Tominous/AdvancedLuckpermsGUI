@@ -1,2 +1,2 @@
 # Registered custom template.
-DrOreo002|MaterialFix|1.0|1.15
+DrOreo002|MaterialFix|1.0|1.15|1.3
