@@ -761,7 +761,50 @@ Misc:
           - '&aClick &7to go to &e%prevInventory% &7inventory'
       _:
         material: GRAY_STAINED_GLASS_PANE
-
+  # A template list menu, used to see any available
+  # custom template that the author or other users
+  # provided
+  TemplateListMenu:
+    title: 'Template List'
+    paginated: true
+    size: 36
+    layout:
+      - '!-------!'
+      - '!-------!'
+      - '!-------!'
+      - 'PXXXIXXXN'
+    layout-item:
+      X:
+        name: ' '
+        material: IRON_BARS
+      P:
+        name: '&aPrevious Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to previous page'
+      I:
+        name: '&aMenu Information'
+        material: BOOK
+        lore:
+          - '&7You''re currently in page &a%currPage%'
+          - '&7there''s in total of &a%totalPage% &7pages available'
+      N:
+        name: '&aNext Page'
+        material: ARROW
+        lore:
+          - '&aClick &7to go to next page'
+    selectable:
+      material: GRAY_STAINED_GLASS_PANE
+      # Material will change to this if the template is currently applied
+      applied: LIME_STAINED_GLASS_PANE
+      name: '&a%templateName% &e(v%version%)'
+      lore:
+        - '&7A template by &e%author%'
+        - '&7this template %support%'
+        - '&7on your current &aLuckPermGUI &7version!'
+        - '&r'
+        - '&aLeft-Click &7to show information'
+        - '&aRight-Click &7to apply'
 # This is a paginated inventory [For selection]
 # which means there's can be a lot of data inside
 # and can be viewed per pages
@@ -905,7 +948,7 @@ Selector:
       - '!-------!'
       - '!-------!'
       - '!-------!'
-      - 'PXXXIXXXN'
+      - 'PXXCXIXXN'
       - '%navigator-paginated%'
     layout-item:
       X:
