@@ -103,7 +103,7 @@ Main:
         name: '&a%player%'
         lore:
           - '&r'
-          - '&bUser Info'
+          - '&bUser Information'
           - '&7- &3UUID: &f%user_uuid%'
           - '&7- &3Status: %user_status%'
           - '&7- &3Primary Group: &f%user_primary_group%'
@@ -569,7 +569,7 @@ Information:
       name: '&a%player%'
       lore:
         - '&r'
-        - '&bUser Info'
+        - '&bUser Information'
         - '&7- &3UUID: &f%user_uuid%'
         - '&7- &3Status: %user_status%'
         - '&7- &3Primary Group: &f%user_primary_group%'
